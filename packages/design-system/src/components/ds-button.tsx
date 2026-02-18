@@ -3,8 +3,11 @@ import { Loader2Icon } from "lucide-react";
 import type { ComponentProps, ReactNode } from "react";
 
 interface DsButtonProps extends ComponentProps<typeof Button> {
+  /** Shows button loading state */
   isLoading?: boolean;
+  /** Optional icon added on the left of the button */
   leftIcon?: ReactNode;
+  /** Optional icon added on the right of the button */
   rightIcon?: ReactNode;
 }
 /**
