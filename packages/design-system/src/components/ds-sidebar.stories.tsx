@@ -15,12 +15,27 @@ export default {
   tags: ["autodocs"],
   component: DsSidebar,
   parameters: { layout: "fullscreen" },
+  argTypes: {
+    collapsible: {
+      control: "select",
+      options: ["offcanvas", "icon", "none"],
+      description: "Sidebar collapse behavior",
+    },
+    header: {
+      control: "text",
+      description: "Header text displayed next to the logo",
+    },
+    logo: {
+      control: "text",
+      description: "Logo image URL",
+    },
+  },
 } satisfies Meta<typeof DsSidebar>;
 
 /** Full LMS navigation tree with collapsible sidebar. */
-export function Default(): ReturnType<StoryFn> {
+export const Default: StoryFn<typeof DsSidebar> = (args) => {
   return (
-    <DsSidebar collapsible="icon" header="Data Analytics & AI" logo={logo}>
+    <DsSidebar {...args}>
       <DsTreeItem icon={<BoxIcon />} label="Welcome: Data Analyst" />
       <DsTreeItem defaultOpen icon={<BoxIcon />} label="M0. Fundamentals">
         <DsTreeItem
@@ -55,4 +70,9 @@ export function Default(): ReturnType<StoryFn> {
       </DsTreeItem>
     </DsSidebar>
   );
-}
+};
+Default.args = {
+  collapsible: "icon",
+  header: "Data Analytics & AI",
+  logo,
+};
