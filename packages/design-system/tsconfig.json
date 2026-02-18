@@ -1,6 +1,9 @@
 {
   "extends": "@workspace/typescript-config/react-library.json",
   "compilerOptions": {
+    "paths": {
+      "@package/design-system": ["./src/*"]
+    },
     "outDir": "./dist",
     "rootDir": "./src",
     "types": ["vitest/globals", "@testing-library/jest-dom"]

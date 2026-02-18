@@ -1,4 +1,12 @@
-@import "@workspace/ui/globals.css";
+/* EPICODE brand overrides — consumers must import @workspace/ui/globals.css BEFORE this file */
+
+/* Fix: shadcn sets data-active="false" which Tailwind v4 matches as [data-active] */
+[data-sidebar="menu-button"][data-active="false"],
+[data-sidebar="menu-sub-button"][data-active="false"] {
+  font-weight: inherit;
+  color: inherit;
+  background-color: transparent;
+}
 
 /* EPICODE brand colors */
 
