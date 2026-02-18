@@ -5,6 +5,7 @@
     "includes": [
       "!packages/ui/*",
       "!packages/eslint-config/*",
+      "!apps/storybook/.storybook/*",
       "!node_modules",
       "!.next"
     ]

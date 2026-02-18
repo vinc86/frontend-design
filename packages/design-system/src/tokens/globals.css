@@ -1,6 +1,7 @@
 @import "@workspace/ui/globals.css";
 
 /* EPICODE brand colors */
+
 :root {
   --primary: oklch(0.5693 0.2314 358.22);
   --background: oklch(1 0 0);
@@ -21,7 +22,7 @@
   --primary: oklch(0.5693 0.2314 358.22);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.2349 0.0252 277.49);
-  --secondary-foreground: oklch(0.783 0.0057 274.94);
+  --secondary-foreground: oklch(0.5335 0.014 280.85);
   --muted: oklch(0.2349 0.0252 277.49);
   --muted-foreground: oklch(0.783 0.0057 274.94);
   --accent: oklch(0.2349 0.0252 277.49);
