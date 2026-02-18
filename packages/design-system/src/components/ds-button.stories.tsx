@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 import DsButton from "./ds-button.js";
 
 export default {
-  title: "Components/Button",
+  title: "Components/DsButton",
   tags: ["autodocs"],
   component: DsButton,
   argTypes: {

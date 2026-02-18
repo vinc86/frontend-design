@@ -21,18 +21,10 @@ interface DsSidebarProps extends ComponentProps<typeof Sidebar> {
 function DsSidebarToggle() {
   const { toggleSidebar, open } = useSidebar();
   return (
-    <div style={{ position: "relative", width: 0 }}>
+    <div className="relative w-0">
       <Button
+        className="absolute top-3 -left-2.5 z-20 size-5 rounded-full border-0"
         onClick={toggleSidebar}
-        style={{
-          position: "absolute",
-          top: "0.75rem",
-          left: "-0.6rem",
-          zIndex: 20,
-          width: "1.25rem",
-          height: "1.25rem",
-          border: 0,
-        }}
         variant="outline"
       >
         {open ? (
