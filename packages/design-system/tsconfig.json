@@ -2,7 +2,7 @@
   "extends": "@workspace/typescript-config/react-library.json",
   "compilerOptions": {
     "paths": {
-      "@package/design-system": ["./src/*"]
+      "@workspace/design-system/*": ["./src/*"]
     },
     "outDir": "./dist",
     "rootDir": "./src",

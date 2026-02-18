@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "dev": "turbo dev",
     "build": "turbo build",
     "test": "turbo test",
-    "dev": "turbo dev",
-    "storybook": "pnpm --filter storybook dev",
+    "storybook": "pnpm --filter storybook storybook:dev",
     "lint": "turbo lint",
     "format": "ultracite fix",
     "format:check": "ultracite check",

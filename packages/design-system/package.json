@@ -29,6 +29,7 @@
     "vitest": "^3.2.4"
   },
   "exports": {
+    ".": "./src/index.ts",
     "./globals.css": "./src/tokens/globals.css",
     "./components/*": "./src/components/*.tsx",
     "./lib/*": "./src/lib/*.ts"
