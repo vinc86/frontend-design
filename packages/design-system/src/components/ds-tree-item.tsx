@@ -46,9 +46,9 @@ export default function DsTreeItem({
   return (
     <SidebarMenuItem>
       <SidebarMenuButton
-        size="sm"
-        {...(isActive && { isActive: true })}
+        isActive={isActive}
         onClick={() => setIsExpanded((prev) => !prev)}
+        size="sm"
       >
         {sidebarOpen && (isExpanded ? <ChevronUp /> : <ChevronDownIcon />)}
         {icon}

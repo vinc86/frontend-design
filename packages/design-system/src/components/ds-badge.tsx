@@ -1,4 +1,5 @@
 import { Badge } from "@workspace/ui/components/badge";
+import { cn } from "@workspace/ui/lib/utils";
 import type { ComponentProps } from "react";
 
 const statusVariants = {
@@ -23,7 +24,10 @@ export default function DsBadge({
   ...props
 }: DsBadgeProps) {
   return (
-    <Badge className={status ? statusVariants[status] : className} {...props}>
+    <Badge
+      className={cn(status ? statusVariants[status] : className)}
+      {...props}
+    >
       {children}
     </Badge>
   );
