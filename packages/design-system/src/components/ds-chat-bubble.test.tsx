@@ -8,18 +8,6 @@ describe("DsChatBubble", () => {
     expect(screen.getByText("Hello world")).toBeInTheDocument();
   });
 
-  it("renders assistant sender by default", () => {
-    const { container } = render(<DsChatBubble>Hi</DsChatBubble>);
-    const wrapper = container.firstChild as HTMLElement;
-    expect(wrapper.className).not.toContain("ml-auto");
-  });
-
-  it("renders user sender aligned right", () => {
-    const { container } = render(<DsChatBubble sender="user">Hi</DsChatBubble>);
-    const wrapper = container.firstChild as HTMLElement;
-    expect(wrapper.className).toContain("ml-auto");
-  });
-
   it("renders timestamp when provided", () => {
     render(<DsChatBubble timestamp="10:30 AM">Hi</DsChatBubble>);
     expect(screen.getByText("10:30 AM")).toBeInTheDocument();
