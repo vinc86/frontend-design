@@ -31,7 +31,11 @@ export default function DsAvatar({
   return (
     <Avatar {...props}>
       {src && <AvatarImage alt={fallback ?? "Avatar"} src={src} />}
-      {fallback && <AvatarFallback>{fallback}</AvatarFallback>}
+      {fallback && (
+        <AvatarFallback className="bg-secondary text-secondary-foreground">
+          {fallback}
+        </AvatarFallback>
+      )}
       {status && <AvatarBadge className={statusColors[status]} />}
     </Avatar>
   );
