@@ -25,8 +25,8 @@ const lessonIcon = {
 };
 
 const statusIcon = {
-  completed: <CheckCircleIcon className="size-3.5 text-green-500" />,
-  "in-progress": <CircleDotIcon className="size-3.5 text-primary" />,
+  completed: <CheckCircleIcon className="size-3.5 text-green-500!" />,
+  "in-progress": <CircleDotIcon className="size-3.5" />,
   locked: <LockIcon className="size-3.5" />,
 };
 

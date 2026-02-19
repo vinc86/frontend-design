@@ -88,7 +88,7 @@ export const course: Course = {
           id: "les-2-4",
           title: "Responsive Design",
           type: "article",
-          status: "locked",
+          status: "completed",
           content:
             "Responsive web design is about creating web pages that look good on all devices.",
         },

@@ -44,7 +44,8 @@ export default function DsInput({
         <Input
           aria-invalid={!!error}
           className={cn(
-            "rounded-sm border border-gray-700 p-5",
+            "rounded-sm border border-accent-foreground/20 p-5",
+            "placeholder:text-accent-foreground/50",
             leftIcon && "pl-9",
             rightSlot && "pr-14",
             className
