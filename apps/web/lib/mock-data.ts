@@ -39,8 +39,15 @@ export const course: Course = {
           title: "Welcome & Setup",
           type: "article",
           status: "completed",
-          content:
-            "Welcome to the Frontend Bootcamp! In this lesson we cover the tools and environment you'll need throughout the course.",
+          content: `## Welcome to the Frontend Bootcamp!
+
+In this lesson we cover the **tools and environment** you'll need throughout the course.
+
+### What you'll need
+
+- A modern browser (Chrome, Firefox, or Edge)
+- A code editor — we recommend [VS Code](https://code.visualstudio.com)
+- Node.js **v20+** installed on your machine`,
         },
         {
           id: "les-1-2",
@@ -54,7 +61,13 @@ export const course: Course = {
           title: "Your First Page",
           type: "quiz",
           status: "completed",
-          content: "Build a simple HTML page with a heading and a paragraph.",
+          content: `## Quiz: Your First Page
+
+Build a simple HTML page that includes:
+
+1. A **heading** with your name
+2. A **paragraph** introducing yourself
+3. An **unordered list** of your three favourite technologies`,
         },
       ],
     },
@@ -67,8 +80,15 @@ export const course: Course = {
           title: "Intro to HTML",
           type: "article",
           status: "completed",
-          content:
-            "HTML (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser.",
+          content: `## What is HTML?
+
+**HTML** (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser.
+
+### Key Concepts
+
+- **Elements** are the building blocks of HTML pages
+- **Tags** usually come in pairs: \`<p>\` and \`</p>\`
+- **Attributes** provide additional information about elements`,
         },
         {
           id: "les-2-2",
@@ -89,8 +109,15 @@ export const course: Course = {
           title: "Responsive Design",
           type: "article",
           status: "completed",
-          content:
-            "Responsive web design is about creating web pages that look good on all devices.",
+          content: `## Responsive Web Design
+
+Responsive web design is about creating web pages that look good on **all devices** — desktops, tablets, and phones.
+
+### Best Practices
+
+1. Use **relative units** (\`rem\`, \`%\`, \`vw\`) instead of fixed pixels
+2. Design **mobile-first**, then add complexity for larger screens
+3. Test on real devices, not just browser DevTools`,
         },
       ],
     },
@@ -103,8 +130,31 @@ export const course: Course = {
           title: "Variables & Types",
           type: "article",
           status: "locked",
-          content:
-            "JavaScript variables can be declared using let, const, or var. Each has different scoping rules.",
+          content: `## Variables & Data Types
+
+JavaScript variables can be declared using \`let\`, \`const\`, or \`var\`. Each has different scoping rules.
+
+### Declaration Keywords
+
+| Keyword | Scope    | Reassignable | Hoisted |
+|---------|----------|--------------|---------|
+| \`var\`   | Function | ✅           | ✅      |
+| \`let\`   | Block    | ✅           | ❌      |
+| \`const\` | Block    | ❌           | ❌      |
+
+### Primitive Types
+
+- \`string\` — \`"hello"\`
+- \`number\` — \`42\`, \`3.14\`
+- \`boolean\` — \`true\`, \`false\`
+- \`null\` and \`undefined\`
+
+\`\`\`js
+const name = "Epicode";
+let score = 100;
+\`\`\`
+
+> ⚠️ Always prefer \`const\` unless you need to reassign the variable.`,
         },
         {
           id: "les-3-2",
@@ -125,7 +175,18 @@ export const course: Course = {
           title: "JS Quiz",
           type: "quiz",
           status: "locked",
-          content: "Test your knowledge of JavaScript fundamentals.",
+          content: `## Quiz: JavaScript Fundamentals
+
+Test your knowledge of JavaScript fundamentals.
+
+### Instructions
+
+1. Declare a variable \`greeting\` with the value \`"Hello, World!"\`
+2. Write a function \`add(a, b)\` that returns the sum of two numbers
+3. Use \`document.querySelector\` to select an element with the class \`.output\`
+4. Set its \`textContent\` to the result of \`add(3, 7)\`
+
+> ⏱ You have **20 minutes** to complete this quiz.`,
         },
       ],
     },

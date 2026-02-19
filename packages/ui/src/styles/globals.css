@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 /* @source paths are relative to this file (packages/ui/src/styles/) */
 @source "../../../../apps/**/*.{ts,tsx}";
 @source "../../../../packages/design-system/src/**/*.{ts,tsx}";

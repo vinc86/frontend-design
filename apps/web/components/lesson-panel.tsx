@@ -7,6 +7,7 @@ import {
   ChevronRightIcon,
   PlayCircleIcon,
 } from "lucide-react";
+import Markdown from "react-markdown";
 import { course, getCourseProgress, type Lesson } from "@/lib/mock-data";
 import CourseHeader from "./course-header";
 
@@ -97,9 +98,9 @@ export default function LessonPanel({
 
         {/* Lesson content */}
         {activeLesson.content && activeLesson.type !== "video" && (
-          <div className="text-foreground text-lg leading-relaxed">
-            <p>{activeLesson.content}</p>
-          </div>
+          <article className="prose prose-sm dark:prose-invert max-w-none">
+            <Markdown>{activeLesson.content}</Markdown>
+          </article>
         )}
       </div>
 
