@@ -1,8 +1,8 @@
 /* EPICODE brand overrides — consumers must import @workspace/ui/globals.css BEFORE this file */
 
 /* Fix: shadcn sets data-active="false" which Tailwind v4 matches as [data-active] */
-[data-sidebar="menu-button"][data-active="false"],
-[data-sidebar="menu-sub-button"][data-active="false"] {
+[data-sidebar="menu-button"][data-active="false"]:not(:hover),
+[data-sidebar="menu-sub-button"][data-active="false"]:not(:hover) {
   font-weight: inherit;
   color: inherit;
   background-color: transparent;
@@ -27,6 +27,8 @@
   --sidebar: oklch(0.9497 0.0027 286.35);
   --sidebar-primary: oklch(0.5693 0.2314 358.22);
   --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.93 0.03 358.22);
+  --sidebar-accent-foreground: oklch(0.2753 0.0942 272.09);
 
   /* custom values */
   --chat-send-button: oklch(0.8827 0.0094 286.03);

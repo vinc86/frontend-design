@@ -22,7 +22,7 @@ function DsSidebarToggle() {
   return (
     <div className="relative w-0">
       <Button
-        className="absolute top-3 -left-2.5 z-20 size-5 rounded-full border-0"
+        className="absolute top-20 -left-2.5 z-20 size-5 rounded-full border-0"
         onClick={toggleSidebar}
         variant="outline"
       >

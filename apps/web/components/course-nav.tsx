@@ -3,80 +3,65 @@
 import DsSidebar from "@workspace/design-system/components/ds-sidebar";
 import DsTreeItem from "@workspace/design-system/components/ds-tree-item";
 import {
-  BookOpenIcon,
-  CodeIcon,
+  CheckCircleIcon,
+  CircleDotIcon,
   FileTextIcon,
-  LayoutDashboardIcon,
+  LockIcon,
+  PackageIcon,
   PlayCircleIcon,
 } from "lucide-react";
+import logo from "@/assets/epicode-logo.jpeg";
+import { course, type Lesson } from "@/lib/mock-data";
 
-export default function CourseNav() {
+interface CourseNavProps {
+  activeLesson?: Lesson;
+  onLessonSelect?: (lesson: Lesson) => void;
+}
+
+const lessonIcon = {
+  video: <PlayCircleIcon className="size-3.5" />,
+  article: <FileTextIcon className="size-3.5" />,
+  quiz: <FileTextIcon className="size-3.5" />,
+};
+
+const statusIcon = {
+  completed: <CheckCircleIcon className="size-3.5 text-green-500" />,
+  "in-progress": <CircleDotIcon className="size-3.5 text-primary" />,
+  locked: <LockIcon className="size-3.5" />,
+};
+
+export default function CourseNav({
+  activeLesson,
+  onLessonSelect,
+}: CourseNavProps) {
   return (
-    <DsSidebar header="Frontend Bootcamp" logo="/epicode-logo.svg">
-      <DsTreeItem
-        defaultOpen
-        icon={<LayoutDashboardIcon className="size-4" />}
-        label="1. Getting Started"
-      >
-        <DsTreeItem
-          icon={<FileTextIcon className="size-3.5" />}
-          label="Welcome & Setup"
-        />
-        <DsTreeItem
-          icon={<CodeIcon className="size-3.5" />}
-          label="Dev Environment"
-        />
-      </DsTreeItem>
-
-      <DsTreeItem
-        defaultOpen
-        icon={<BookOpenIcon className="size-4" />}
-        label="2. HTML & CSS"
-      >
-        <DsTreeItem
-          icon={<FileTextIcon className="size-3.5" />}
-          label="Intro to HTML"
-        />
-        <DsTreeItem
-          icon={<FileTextIcon className="size-3.5" />}
-          label="CSS Fundamentals"
-        />
-        <DsTreeItem
-          icon={<PlayCircleIcon className="size-3.5" />}
-          isActive
-          label="Flexbox & Grid"
-        />
-      </DsTreeItem>
-
-      <DsTreeItem icon={<CodeIcon className="size-4" />} label="3. JavaScript">
-        <DsTreeItem
-          icon={<FileTextIcon className="size-3.5" />}
-          label="Variables & Types"
-        />
-        <DsTreeItem
-          icon={<FileTextIcon className="size-3.5" />}
-          label="Functions & Scope"
-        />
-        <DsTreeItem
-          icon={<PlayCircleIcon className="size-3.5" />}
-          label="DOM Manipulation"
-        />
-      </DsTreeItem>
-
-      <DsTreeItem icon={<CodeIcon className="size-4" />} label="4. React">
-        <DsTreeItem
-          icon={<FileTextIcon className="size-3.5" />}
-          label="Components & JSX"
-        />
-        <DsTreeItem
-          icon={<FileTextIcon className="size-3.5" />}
-          label="State & Props"
-        />
-        <DsTreeItem
-          icon={<PlayCircleIcon className="size-3.5" />}
-          label="Hooks Deep Dive"
-        />
-      </DsTreeItem>
+    <DsSidebar collapsible="icon" header={course.title} logo={logo.src}>
+      {course.modules.map((mod, i) => {
+        const hasActive = mod.lessons.some((l) => l.id === activeLesson?.id);
+        return (
+          <DsTreeItem
+            defaultOpen={hasActive}
+            icon={<PackageIcon className="size-4" />}
+            key={mod.id}
+            label={`${i + 1}. ${mod.title}`}
+          >
+            {mod.lessons.map((lesson) => (
+              <DsTreeItem
+                disabled={lesson.status === "locked"}
+                icon={
+                  lesson.status === "completed"
+                    ? statusIcon[lesson.status]
+                    : lessonIcon[lesson.type]
+                }
+                isActive={lesson.id === activeLesson?.id}
+                key={lesson.id}
+                label={lesson.title}
+                onClick={() => onLessonSelect?.(lesson)}
+              />
+            ))}
+          </DsTreeItem>
+        );
+      })}
     </DsSidebar>
   );
 }

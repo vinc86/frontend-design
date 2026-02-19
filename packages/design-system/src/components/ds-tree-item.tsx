@@ -5,6 +5,7 @@ import {
   SidebarMenuSubButton,
   useSidebar,
 } from "@workspace/ui/components/sidebar";
+import { cn } from "@workspace/ui/lib/utils";
 import { ChevronDownIcon, ChevronUp } from "lucide-react";
 import type { ReactNode } from "react";
 import { useState } from "react";
@@ -12,6 +13,8 @@ import { useState } from "react";
 interface DsTreeItemProps {
   children?: ReactNode;
   defaultOpen?: boolean;
+  /** Dims the item text (e.g. locked lessons) */
+  disabled?: boolean;
   icon?: ReactNode;
   isActive?: boolean;
   label: string;
@@ -23,7 +26,7 @@ export default function DsTreeItem({
   label,
   icon,
   children,
-
+  disabled = false,
   defaultOpen = false,
   isActive = false,
   onClick,
@@ -35,7 +38,14 @@ export default function DsTreeItem({
   if (!hasChildren) {
     return (
       <SidebarMenuItem>
-        <SidebarMenuSubButton isActive={isActive} onClick={onClick} size="sm">
+        <SidebarMenuSubButton
+          className={cn(
+            disabled ? "pointer-events-none opacity-40" : "cursor-pointer"
+          )}
+          isActive={isActive}
+          onClick={disabled ? undefined : onClick}
+          size="sm"
+        >
           {icon}
           <span>{label}</span>
         </SidebarMenuSubButton>
@@ -46,6 +56,9 @@ export default function DsTreeItem({
   return (
     <SidebarMenuItem>
       <SidebarMenuButton
+        className={cn(
+          disabled ? "pointer-events-none opacity-40" : "cursor-pointer"
+        )}
         isActive={isActive}
         onClick={() => setIsExpanded((prev) => !prev)}
         size="sm"
