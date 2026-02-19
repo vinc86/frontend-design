@@ -4,7 +4,7 @@ import { BellIcon, SearchIcon } from "lucide-react";
 
 export default function CourseHeader() {
   return (
-    <header className="flex items-center justify-between py-10">
+    <header className="flex items-center justify-between px-7 py-5">
       <div className="w-70">
         <DsInput
           leftIcon={<SearchIcon className="size-4" />}

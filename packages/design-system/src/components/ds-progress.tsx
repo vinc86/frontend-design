@@ -23,7 +23,7 @@ export default function DsProgress({
         <div className="flex items-center justify-between text-sm">
           {label && <span className="font-medium">{label}</span>}
           {showPercentage && (
-            <span className="text-muted-foreground">{value}%</span>
+            <span className="ml-10 text-foreground">{value}%</span>
           )}
         </div>
       )}

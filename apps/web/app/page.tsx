@@ -16,7 +16,7 @@ export default function Page() {
   );
 
   return (
-    <SidebarProvider style={{ "--sidebar-width": "20rem" } as CSSProperties}>
+    <SidebarProvider style={{ "--sidebar-width": "17rem" } as CSSProperties}>
       {/* ── Left panel: course navigation ── */}
       <CourseNav activeLesson={activeLesson} onLessonSelect={setActiveLesson} />
 
@@ -25,7 +25,10 @@ export default function Page() {
         <div className="flex h-svh flex-col">
           {/* ── Center: lesson content ── */}
           <div className="flex h-full">
-            <LessonPanel activeLesson={activeLesson} />
+            <LessonPanel
+              activeLesson={activeLesson}
+              onLessonSelect={setActiveLesson}
+            />
 
             {/* ── Right panel: comments / chat ── */}
             <aside className="flex w-80 flex-col border-l">
