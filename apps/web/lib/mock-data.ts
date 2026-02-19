@@ -108,7 +108,7 @@ Build a simple HTML page that includes:
           id: "les-2-4",
           title: "Responsive Design",
           type: "article",
-          status: "completed",
+          status: "locked",
           content: `## Responsive Web Design
 
 Responsive web design is about creating web pages that look good on **all devices** — desktops, tablets, and phones.
@@ -134,59 +134,7 @@ Responsive web design is about creating web pages that look good on **all device
 
 JavaScript variables can be declared using \`let\`, \`const\`, or \`var\`. Each has different scoping rules.
 
-### Declaration Keywords
-
-| Keyword | Scope    | Reassignable | Hoisted |
-|---------|----------|--------------|---------|
-| \`var\`   | Function | ✅           | ✅      |
-| \`let\`   | Block    | ✅           | ❌      |
-| \`const\` | Block    | ❌           | ❌      |
-
-### Primitive Types
-
-- \`string\` — \`"hello"\`
-- \`number\` — \`42\`, \`3.14\`
-- \`boolean\` — \`true\`, \`false\`
-- \`null\` and \`undefined\`
-
-\`\`\`js
-const name = "Epicode";
-let score = 100;
-\`\`\`
-
-> ⚠️ Always prefer \`const\` unless you need to reassign the variable.`,
-        },
-        {
-          id: "les-3-2",
-          title: "Functions & Scope",
-          type: "video",
-          status: "locked",
-          content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-        {
-          id: "les-3-3",
-          title: "DOM Manipulation",
-          type: "video",
-          status: "locked",
-          content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        },
-        {
-          id: "les-3-4",
-          title: "JS Quiz",
-          type: "quiz",
-          status: "locked",
-          content: `## Quiz: JavaScript Fundamentals
-
-Test your knowledge of JavaScript fundamentals.
-
-### Instructions
-
-1. Declare a variable \`greeting\` with the value \`"Hello, World!"\`
-2. Write a function \`add(a, b)\` that returns the sum of two numbers
-3. Use \`document.querySelector\` to select an element with the class \`.output\`
-4. Set its \`textContent\` to the result of \`add(3, 7)\`
-
-> ⏱ You have **20 minutes** to complete this quiz.`,
+Test your knowledge of JavaScript fundamentals.`,
         },
       ],
     },
@@ -230,31 +178,3 @@ export const comments: Comment[] = [
     timestamp: "09:26 AM",
   },
 ];
-
-/** Get all lessons in order across all modules */
-export function getAllLessons(): Lesson[] {
-  return course.modules.flatMap((m) => m.lessons);
-}
-
-/** Find a lesson by its ID */
-export function getLessonById(id: string): Lesson | undefined {
-  for (const mod of course.modules) {
-    const lesson = mod.lessons.find((l) => l.id === id);
-    if (lesson) {
-      return lesson;
-    }
-  }
-  return undefined;
-}
-
-/** Find the module that contains a given lesson */
-export function getModuleByLessonId(id: string): Module | undefined {
-  return course.modules.find((m) => m.lessons.some((l) => l.id === id));
-}
-
-/** Calculate overall course progress */
-export function getCourseProgress(): number {
-  const allLessons = getAllLessons();
-  const completed = allLessons.filter((l) => l.status === "completed").length;
-  return Math.round((completed / allLessons.length) * 100);
-}

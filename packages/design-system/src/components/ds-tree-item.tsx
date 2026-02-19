@@ -44,8 +44,13 @@ export default function DsTreeItem({
     if (href && !disabled) {
       return (
         <SidebarMenuItem>
-          <SidebarMenuSubButton asChild isActive={isActive} size="sm">
-            <a href={href} onClick={onClick}>
+          <SidebarMenuSubButton
+            asChild
+            className="p-4"
+            isActive={isActive}
+            size="sm"
+          >
+            <a href={href}>
               {icon}
               <span>{label}</span>
             </a>
@@ -58,7 +63,8 @@ export default function DsTreeItem({
       <SidebarMenuItem>
         <SidebarMenuSubButton
           className={cn(
-            disabled ? "pointer-events-none opacity-40" : "cursor-pointer"
+            disabled ? "pointer-events-none opacity-40" : "cursor-pointer",
+            "p-4"
           )}
           isActive={isActive}
           onClick={disabled ? undefined : onClick}

@@ -1,3 +1,4 @@
+import DsBadge from "@workspace/design-system/components/ds-badge";
 import DsButton from "@workspace/design-system/components/ds-button";
 import DsProgress from "@workspace/design-system/components/ds-progress";
 import { SidebarInset } from "@workspace/ui/components/sidebar";
@@ -5,16 +6,16 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
-import ChatAside from "@/components/chat-aside";
-import CourseHeader from "@/components/course-header";
-import CourseNav from "@/components/course-nav";
 import {
-  course,
   getAllLessons,
   getCourseProgress,
   getLessonById,
   getModuleByLessonId,
-} from "@/lib/mock-data";
+} from "@/app/utils";
+import ChatAside from "@/components/chat-aside";
+import CourseHeader from "@/components/course-header";
+import CourseNav from "@/components/course-nav";
+import { course } from "@/lib/mock-data";
 
 interface LessonPageProps {
   params: Promise<{ lessonId: string }>;
@@ -62,7 +63,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
                     </span>
                   </nav>
                 </div>
-
+                <DsBadge status={"completed"} />
                 <DsProgress
                   label="Course progress"
                   showPercentage
