@@ -1,3 +1,5 @@
+"use client";
+
 import {
   SidebarMenuButton,
   SidebarMenuItem,
@@ -15,6 +17,8 @@ interface DsTreeItemProps {
   defaultOpen?: boolean;
   /** Dims the item text (e.g. locked lessons) */
   disabled?: boolean;
+  /** Navigation URL — renders the leaf as a link */
+  href?: string;
   icon?: ReactNode;
   isActive?: boolean;
   label: string;
@@ -28,6 +32,7 @@ export default function DsTreeItem({
   children,
   disabled = false,
   defaultOpen = false,
+  href,
   isActive = false,
   onClick,
 }: DsTreeItemProps) {
@@ -36,6 +41,19 @@ export default function DsTreeItem({
   const hasChildren = !!children;
 
   if (!hasChildren) {
+    if (href && !disabled) {
+      return (
+        <SidebarMenuItem>
+          <SidebarMenuSubButton asChild isActive={isActive} size="sm">
+            <a href={href} onClick={onClick}>
+              {icon}
+              <span>{label}</span>
+            </a>
+          </SidebarMenuSubButton>
+        </SidebarMenuItem>
+      );
+    }
+
     return (
       <SidebarMenuItem>
         <SidebarMenuSubButton

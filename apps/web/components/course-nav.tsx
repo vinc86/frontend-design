@@ -1,5 +1,3 @@
-"use client";
-
 import DsSidebar from "@workspace/design-system/components/ds-sidebar";
 import DsTreeItem from "@workspace/design-system/components/ds-tree-item";
 import {
@@ -11,11 +9,10 @@ import {
   PlayCircleIcon,
 } from "lucide-react";
 import logo from "@/assets/epicode-logo.jpeg";
-import { course, type Lesson } from "@/lib/mock-data";
+import { course } from "@/lib/mock-data";
 
 interface CourseNavProps {
-  activeLesson?: Lesson;
-  onLessonSelect?: (lesson: Lesson) => void;
+  activeLessonId?: string;
 }
 
 const lessonIcon = {
@@ -30,14 +27,11 @@ const statusIcon = {
   locked: <LockIcon className="size-3.5" />,
 };
 
-export default function CourseNav({
-  activeLesson,
-  onLessonSelect,
-}: CourseNavProps) {
+export default function CourseNav({ activeLessonId }: CourseNavProps) {
   return (
     <DsSidebar collapsible="icon" header={course.title} logo={logo.src}>
       {course.modules.map((mod, i) => {
-        const hasActive = mod.lessons.some((l) => l.id === activeLesson?.id);
+        const hasActive = mod.lessons.some((l) => l.id === activeLessonId);
         return (
           <DsTreeItem
             defaultOpen={hasActive}
@@ -48,15 +42,15 @@ export default function CourseNav({
             {mod.lessons.map((lesson) => (
               <DsTreeItem
                 disabled={lesson.status === "locked"}
+                href={`/lessons/${lesson.id}`}
                 icon={
                   lesson.status === "completed"
                     ? statusIcon[lesson.status]
                     : lessonIcon[lesson.type]
                 }
-                isActive={lesson.id === activeLesson?.id}
+                isActive={lesson.id === activeLessonId}
                 key={lesson.id}
                 label={lesson.title}
-                onClick={() => onLessonSelect?.(lesson)}
               />
             ))}
           </DsTreeItem>

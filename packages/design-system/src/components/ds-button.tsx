@@ -19,8 +19,17 @@ export default function DsButton({
   leftIcon,
   rightIcon,
   children,
+  asChild,
   ...props
 }: DsButtonProps) {
+  if (asChild) {
+    return (
+      <Button asChild {...props}>
+        {children}
+      </Button>
+    );
+  }
+
   return (
     <Button disabled={isLoading} {...props}>
       {isLoading ? <Loader2Icon className="animate-spin" /> : leftIcon}

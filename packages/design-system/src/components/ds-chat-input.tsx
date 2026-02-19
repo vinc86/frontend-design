@@ -1,3 +1,5 @@
+"use client";
+
 import { Textarea } from "@workspace/ui/components/textarea";
 import { useCallback, useRef, useState } from "react";
 import DsButton from "./ds-button.js";
