@@ -6,11 +6,10 @@ import {
   SidebarGroupContent,
   SidebarHeader,
   SidebarMenu,
-  SidebarProvider,
   useSidebar,
 } from "@workspace/ui/components/sidebar";
 import { ChevronsLeftIcon, ChevronsRightIcon } from "lucide-react";
-import type { ComponentProps, CSSProperties, ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
 interface DsSidebarProps extends ComponentProps<typeof Sidebar> {
   collapsible?: "offcanvas" | "icon" | "none";
@@ -46,7 +45,7 @@ export default function DsSidebar({
   ...props
 }: DsSidebarProps) {
   return (
-    <SidebarProvider style={{ "--sidebar-width": "20rem" } as CSSProperties}>
+    <>
       <Sidebar collapsible={collapsible} {...props}>
         {(logo || header) && (
           <SidebarHeader className="flex-row items-center gap-2 overflow-hidden whitespace-nowrap">
@@ -76,6 +75,6 @@ export default function DsSidebar({
         </SidebarContent>
       </Sidebar>
       <DsSidebarToggle />
-    </SidebarProvider>
+    </>
   );
 }
