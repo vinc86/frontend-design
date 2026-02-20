@@ -109,3 +109,14 @@ The reference `ui.png` focuses on the three-panel layout but doesn't show a deta
 - **Pre-commit Hooks** — Husky configured for formatting checks
 - **Responsive Sidebar** — Collapsible with smooth transitions
 - **Keyboard Navigation** — Tree items navigable via keyboard
+
+- ## Verification Checklist
+
+- [x] `pnpm install` — no errors
+- [x] `turbo run build` — 0 errors
+- [x] `turbo run test` — all tests pass
+- [x] `turbo run format:check` — 0 Ultracite errors
+- [x] `pnpm --filter storybook dev` — Storybook launches and all stories render
+- [x] `pnpm --filter web dev` — LMS UI launches and is interactive
+- [x] No TypeScript errors (`tsc --noEmit`)
+- [x] `packages/ui` is untouched — only primitive shadcn components
