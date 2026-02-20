@@ -7,7 +7,6 @@
     "build": "turbo build",
     "test": "turbo test",
     "lint": "turbo lint",
-    "check-types": "turbo check-types",
     "format": "ultracite fix",
     "format:check": "ultracite check",
     "storybook": "pnpm --filter storybook dev",

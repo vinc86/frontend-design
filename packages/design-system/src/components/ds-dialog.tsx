@@ -61,7 +61,9 @@ export default function DsDialog({
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
-          {description && <DialogDescription>{description}</DialogDescription>}
+          <DialogDescription className={description ? "" : "sr-only"}>
+            {description ?? title}
+          </DialogDescription>
         </DialogHeader>
         {children}
         <DialogFooter>

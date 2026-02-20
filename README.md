@@ -18,9 +18,8 @@ pnpm storybook      # Storybook  → http://localhost:6006
 | `pnpm build` | Build all apps & packages |
 | `pnpm test` | Run all tests (Vitest) |
 | `pnpm lint` | Lint all packages (ESLint) |
-| `pnpm check-types` | TypeScript type checking |
 | `pnpm format` | Fix formatting (Ultracite/Biome) |
-| `pnpm format:check` | Check formatting (0 errors required) |
+| `pnpm format:check` | Check formatting |
 | `pnpm storybook` | Start Storybook dev server |
 | `pnpm storybook:build` | Build Storybook to static |
 
