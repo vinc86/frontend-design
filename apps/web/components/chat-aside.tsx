@@ -4,11 +4,13 @@ import DsChatBubble from "@workspace/design-system/components/ds-chat-bubble";
 import DsChatInput from "@workspace/design-system/components/ds-chat-input";
 import { cn } from "@workspace/ui/lib/utils";
 import { ChevronDownIcon, ChevronUpIcon, UsersIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { comments } from "@/lib/mock-data";
 
 export default function ChatAside() {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("chat");
 
   return (
     <aside className="flex h-screen w-70 flex-col overflow-hidden border-l">
@@ -19,7 +21,7 @@ export default function ChatAside() {
         type="button"
       >
         <UsersIcon className="size-4 text-primary" />
-        <span className="font-semibold text-sm">Comments</span>
+        <span className="font-semibold text-sm">{t("title")}</span>
         <span className="ml-auto flex items-center gap-1 text-foreground text-xs">
           {comments.length}
           {isOpen ? (
@@ -52,7 +54,7 @@ export default function ChatAside() {
 
         {/* Chat input */}
         <div className="shrink-0 border-t p-4">
-          <DsChatInput placeholder="Leave a comment" />
+          <DsChatInput placeholder={t("placeholder")} />
         </div>
       </div>
     </aside>
