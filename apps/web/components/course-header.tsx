@@ -2,6 +2,7 @@ import DsAvatar from "@workspace/design-system/components/ds-avatar";
 import DsInput from "@workspace/design-system/components/ds-input";
 import { BellIcon, SearchIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./language-switcher";
 import ThemeSwitcher from "./theme-switcher";
 
 export default function CourseHeader() {
@@ -24,7 +25,7 @@ export default function CourseHeader() {
         {/* Theme switcher */}
         <ThemeSwitcher />
         {/* Language switcher */}
-
+        <LanguageSwitcher />
         {/* Notification bell */}
         <button className="relative cursor-pointer" type="button">
           <BellIcon className="size-5 text-muted-foreground" />

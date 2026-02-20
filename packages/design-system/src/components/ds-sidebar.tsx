@@ -50,7 +50,7 @@ export default function DsSidebar({
     <>
       <Sidebar collapsible={collapsible} {...props}>
         {(logo || header) && (
-          <SidebarHeader className="flex-row items-center gap-3 overflow-hidden">
+          <SidebarHeader className="mt-3 ml-3 flex-row items-center gap-3 overflow-hidden">
             {logo && (
               // biome-ignore lint/performance/noImgElement: not using Next.js Image in design-system
               <img
@@ -62,7 +62,7 @@ export default function DsSidebar({
               />
             )}
             {header && (
-              <span className="overflow-hidden text-ellipsis font-semibold">
+              <span className="overflow-hidden text-ellipsis font-semibold text-lg">
                 {header}
               </span>
             )}

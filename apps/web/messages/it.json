@@ -3,7 +3,7 @@
     "selectLesson": "Seleziona una lezione per iniziare"
   },
   "nav": {
-    "courseTitle": "Bootcamp Frontend"
+    "courseTitle": "Frontend Bootcamp"
   },
   "header": {
     "searchPlaceholder": "Cerca nel corso"
@@ -38,7 +38,7 @@
       "lessons": {
         "les-1-1": {
           "title": "Benvenuto & Setup",
-          "content": "## Benvenuto al Bootcamp Frontend!\n\nIn questa lezione vedremo gli **strumenti e l'ambiente** di cui avrai bisogno durante il corso.\n\n### Cosa ti serve\n\n- Un browser moderno (Chrome, Firefox o Edge)\n- Un editor di codice — consigliamo [VS Code](https://code.visualstudio.com)\n- Node.js **v20+** installato sulla tua macchina"
+          "content": "## Benvenuto al Bootcamp Frontend!\n\nIn questa lezione vedremo gli **strumenti e l'ambiente** di cui avrai bisogno durante il corso.\n\n### Cosa ti serve\n\n- Un browser moderno (Chrome, Firefox o Edge)\n- Un editor di codice ( consigliamo [VS Code](https://code.visualstudio.com))\n- Node.js **v20+** installato sulla tua macchina"
         },
         "les-1-2": {
           "title": "Ambiente di Sviluppo"
