@@ -1,7 +1,7 @@
+import DsAvatar from "@workspace/design-system/components/ds-avatar";
 import { cn } from "@workspace/ui/lib/utils";
 import { BotIcon } from "lucide-react";
 import type { ReactNode } from "react";
-import DsAvatar from "./ds-avatar.tsx";
 
 export interface DsChatBubbleProps {
   /** Avatar fallback initials (default: "U" for user, bot icon for assistant) */

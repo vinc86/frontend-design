@@ -1,8 +1,8 @@
 "use client";
 
+import DsButton from "@workspace/design-system/components/ds-button";
 import { Textarea } from "@workspace/ui/components/textarea";
 import { useCallback, useRef, useState } from "react";
-import DsButton from "./ds-button.tsx";
 
 export interface DsChatInputProps {
   /** Whether the input and submit button are disabled */

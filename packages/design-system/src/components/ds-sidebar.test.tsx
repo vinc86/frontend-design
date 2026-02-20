@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { SidebarProvider } from "@workspace/ui/components/sidebar";
 import { describe, expect, it } from "vitest";
 import DsSidebar from "./ds-sidebar.js";
 import DsTreeItem from "./ds-tree-item.js";
@@ -27,11 +28,13 @@ describe("DsSidebar", () => {
 
   it("expands tree item children on click", () => {
     render(
-      <DsSidebar header="LMS">
-        <DsTreeItem label="Module 1">
-          <DsTreeItem label="Lesson 1" />
-        </DsTreeItem>
-      </DsSidebar>
+      <SidebarProvider>
+        <DsSidebar header="LMS">
+          <DsTreeItem label="Module 1">
+            <DsTreeItem label="Lesson 1" />
+          </DsTreeItem>
+        </DsSidebar>
+      </SidebarProvider>
     );
 
     // Lesson hidden by default
@@ -43,7 +46,11 @@ describe("DsSidebar", () => {
   });
 
   it("renders toggle button", () => {
-    render(<DsSidebar collapsible="icon" header="LMS" />);
+    render(
+      <SidebarProvider>
+        <DsSidebar collapsible="icon" header="LMS" />
+      </SidebarProvider>
+    );
     // The toggle button is inside the sidebar provider
     const buttons = screen.getAllByRole("button");
     expect(buttons.length).toBeGreaterThan(0);
