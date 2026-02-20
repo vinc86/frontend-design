@@ -1,6 +1,7 @@
 import DsAvatar from "@workspace/design-system/components/ds-avatar";
 import DsInput from "@workspace/design-system/components/ds-input";
 import { BellIcon, SearchIcon } from "lucide-react";
+import ThemeSwitcher from "./theme-switcher";
 
 export default function CourseHeader() {
   return (
@@ -18,6 +19,10 @@ export default function CourseHeader() {
       </div>
 
       <div className="flex items-center gap-4">
+        {/* Theme switcher */}
+        <ThemeSwitcher />
+        {/* Language switcher */}
+
         {/* Notification bell */}
         <button className="relative cursor-pointer" type="button">
           <BellIcon className="size-5 text-muted-foreground" />
@@ -26,7 +31,11 @@ export default function CourseHeader() {
           </span>
         </button>
         {/* User avatar */}
-        <DsAvatar className="cursor-pointer" fallback="VM" />
+        <DsAvatar
+          className="cursor-pointer"
+          fallback="VM"
+          src="https://i.pravatar.cc/150"
+        />
       </div>
     </header>
   );
