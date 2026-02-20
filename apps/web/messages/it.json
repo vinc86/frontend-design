@@ -1,0 +1,30 @@
+{
+  "home": {
+    "selectLesson": "Seleziona una lezione per iniziare"
+  },
+  "nav": {
+    "courseTitle": "Bootcamp Frontend"
+  },
+  "header": {
+    "searchPlaceholder": "Cerca nel corso"
+  },
+  "lesson": {
+    "courseProgress": "Progresso del corso",
+    "previous": "Precedente",
+    "next": "Successiva"
+  },
+  "chat": {
+    "title": "Commenti",
+    "placeholder": "Lascia un commento"
+  },
+  "status": {
+    "completed": "completata",
+    "in-progress": "in corso",
+    "locked": "bloccata",
+    "new": "nuova"
+  },
+  "theme": {
+    "switchToLight": "Passa alla modalità light",
+    "switchToDark": "Passa alla modalità dark"
+  }
+}

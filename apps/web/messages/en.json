@@ -1,0 +1,30 @@
+{
+  "home": {
+    "selectLesson": "Select a lesson to start"
+  },
+  "nav": {
+    "courseTitle": "Frontend Bootcamp"
+  },
+  "header": {
+    "searchPlaceholder": "Search in course"
+  },
+  "lesson": {
+    "courseProgress": "Course progress",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "chat": {
+    "title": "Comments",
+    "placeholder": "Leave a comment"
+  },
+  "status": {
+    "completed": "completed",
+    "in-progress": "in-progress",
+    "locked": "locked",
+    "new": "new"
+  },
+  "theme": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  }
+}
