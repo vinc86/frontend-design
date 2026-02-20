@@ -6,10 +6,12 @@
     "dev": "pnpm --filter web dev",
     "build": "turbo build",
     "test": "turbo test",
-    "storybook": "pnpm --filter storybook dev",
     "lint": "turbo lint",
+    "check-types": "turbo check-types",
     "format": "ultracite fix",
     "format:check": "ultracite check",
+    "storybook": "pnpm --filter storybook dev",
+    "storybook:build": "pnpm --filter storybook build",
     "prepare": "husky"
   },
   "devDependencies": {

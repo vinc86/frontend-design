@@ -6,21 +6,31 @@ import DsTreeItem from "./ds-tree-item.js";
 
 describe("DsSidebar", () => {
   it("renders header text", () => {
-    render(<DsSidebar header="LMS Platform" />);
+    render(
+      <SidebarProvider>
+        <DsSidebar header="LMS Platform" />
+      </SidebarProvider>
+    );
     expect(screen.getByText("LMS Platform")).toBeInTheDocument();
   });
 
   it("renders logo when provided", () => {
-    render(<DsSidebar header="EPICODE" logo="/logo.png" />);
+    render(
+      <SidebarProvider>
+        <DsSidebar header="EPICODE" logo="/logo.png" />
+      </SidebarProvider>
+    );
     expect(screen.getByAltText("EPICODE")).toBeInTheDocument();
   });
 
   it("renders children tree items", () => {
     render(
-      <DsSidebar header="LMS">
-        <DsTreeItem label="Module 1" />
-        <DsTreeItem label="Module 2" />
-      </DsSidebar>
+      <SidebarProvider>
+        <DsSidebar header="LMS">
+          <DsTreeItem label="Module 1" />
+          <DsTreeItem label="Module 2" />
+        </DsSidebar>
+      </SidebarProvider>
     );
     expect(screen.getByText("Module 1")).toBeInTheDocument();
     expect(screen.getByText("Module 2")).toBeInTheDocument();
