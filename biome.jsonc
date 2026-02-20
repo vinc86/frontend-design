@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite/biome/core", "ultracite/biome/next"],
+  "linter": {
+    "rules": {
+      "style": {
+        "useConsistentTypeDefinitions": "off"
+      }
+    }
+  },
+  "files": {
+    "includes": [
+      "!packages/ui/*",
+      "!packages/eslint-config/*",
+      "!apps/storybook/.storybook/*",
+      "!node_modules",
+      "!.next"
+    ]
+  }
+}

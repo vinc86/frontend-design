@@ -1,0 +1,66 @@
+/* EPICODE brand overrides — consumers must import @workspace/ui/globals.css BEFORE this file */
+
+/* Fix: shadcn sets data-active="false" which Tailwind v4 matches as [data-active] */
+[data-sidebar="menu-button"][data-active="false"]:not(:hover),
+[data-sidebar="menu-sub-button"][data-active="false"]:not(:hover) {
+  font-weight: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* EPICODE brand colors */
+
+:root {
+  --primary: oklch(0.5693 0.2314 358.22);
+  --primary-foreground: oklch(1 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1451 0.0166 285.82);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1451 0.0166 285.82);
+  --secondary: oklch(0.2753 0.0942 272.09);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.9497 0.0027 286.35);
+  --muted-foreground: oklch(0.4561 0.0159 286.07);
+  --border: oklch(0.8827 0.0094 286.03);
+  --destructive: oklch(0.5772 0.2454 27.33);
+  --ring: oklch(17.809% 0.01797 344.591);
+  --sidebar: oklch(0.9497 0.0027 286.35);
+  --sidebar-primary: oklch(0.5693 0.2314 358.22);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.93 0.03 358.22);
+  --sidebar-accent-foreground: oklch(0.2753 0.0942 272.09);
+
+  /* custom values */
+  --chat-send-button: oklch(0.8827 0.0094 286.03);
+}
+
+.dark {
+  --background: oklch(0.1547 0.0235 279.29);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.1732 0.0295 273.73);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.1732 0.0295 273.73);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.5693 0.2314 358.22);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.2753 0.0942 272.09);
+  --secondary-foreground: oklch(0.5335 0.014 280.85);
+  --muted: oklch(0.2349 0.0252 277.49);
+  --muted-foreground: oklch(0.4055 0.0476 257.9);
+  --accent: oklch(0.2349 0.0252 277.49);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0.2977 0.0235 281.41);
+  --input: oklch(0.25 0.0294 276.6);
+  --ring: oklch(0.5693 0.2314 358.22);
+  --sidebar: oklch(0.1732 0.0295 273.73);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.5693 0.2314 358.22);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.3179 0.0846 300.95);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.2977 0.0235 281.41);
+  --sidebar-ring: oklch(0.5693 0.2314 358.22);
+
+  /* custom values */
+  --chat-send-button: oklch(0.2977 0.0235 281.41);
+}

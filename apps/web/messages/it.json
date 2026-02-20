@@ -1,0 +1,81 @@
+{
+  "home": {
+    "selectLesson": "Seleziona una lezione per iniziare"
+  },
+  "nav": {
+    "courseTitle": "Frontend Bootcamp"
+  },
+  "header": {
+    "searchPlaceholder": "Cerca nel corso"
+  },
+  "lesson": {
+    "courseProgress": "Progresso del corso",
+    "previous": "Precedente",
+    "next": "Successiva"
+  },
+  "chat": {
+    "title": "Commenti",
+    "placeholder": "Lascia un commento"
+  },
+  "status": {
+    "completed": "completata",
+    "in-progress": "in corso",
+    "locked": "bloccata",
+    "new": "nuova"
+  },
+  "theme": {
+    "switchToLight": "Passa alla modalità light",
+    "switchToDark": "Passa alla modalità dark"
+  },
+  "lessonType": {
+    "video": "Video",
+    "article": "Articolo",
+    "quiz": "Quiz"
+  },
+  "modules": {
+    "mod-1": {
+      "title": "Per Iniziare",
+      "lessons": {
+        "les-1-1": {
+          "title": "Benvenuto & Setup",
+          "content": "## Benvenuto al Bootcamp Frontend!\n\nIn questa lezione vedremo gli **strumenti e l'ambiente** di cui avrai bisogno durante il corso.\n\n### Cosa ti serve\n\n- Un browser moderno (Chrome, Firefox o Edge)\n- Un editor di codice ( consigliamo [VS Code](https://code.visualstudio.com))\n- Node.js **v20+** installato sulla tua macchina"
+        },
+        "les-1-2": {
+          "title": "Ambiente di Sviluppo"
+        },
+        "les-1-3": {
+          "title": "La Tua Prima Pagina",
+          "content": "## Quiz: La Tua Prima Pagina\n\nCrea una semplice pagina HTML che includa:\n\n1. Un **titolo** con il tuo nome\n2. Un **paragrafo** di presentazione\n3. Una **lista non ordinata** delle tue tre tecnologie preferite"
+        }
+      }
+    },
+    "mod-2": {
+      "title": "HTML & CSS",
+      "lessons": {
+        "les-2-1": {
+          "title": "Introduzione a HTML",
+          "content": "## Cos'è HTML?\n\n**HTML** (HyperText Markup Language) è il linguaggio di markup standard per i documenti progettati per essere visualizzati in un browser web.\n\n### Concetti Chiave\n\n- Gli **elementi** sono i mattoni delle pagine HTML\n- I **tag** di solito vengono in coppia: `<p>` e `</p>`\n- Gli **attributi** forniscono informazioni aggiuntive sugli elementi"
+        },
+        "les-2-2": {
+          "title": "Fondamenti di CSS"
+        },
+        "les-2-3": {
+          "title": "Flexbox & Grid"
+        },
+        "les-2-4": {
+          "title": "Design Responsivo",
+          "content": "## Web Design Responsivo\n\nIl web design responsivo consiste nel creare pagine web che appaiano bene su **tutti i dispositivi** — desktop, tablet e telefoni.\n\n### Best Practice\n\n1. Usa **unità relative** (`rem`, `%`, `vw`) invece dei pixel fissi\n2. Progetta **mobile-first**, poi aggiungi complessità per schermi più grandi\n3. Testa su dispositivi reali, non solo nei DevTools del browser"
+        }
+      }
+    },
+    "mod-3": {
+      "title": "JavaScript",
+      "lessons": {
+        "les-3-1": {
+          "title": "Variabili & Tipi",
+          "content": "## Variabili & Tipi di Dato\n\nLe variabili JavaScript possono essere dichiarate usando `let`, `const` o `var`. Ognuna ha regole di scope diverse.\n\nMetti alla prova le tue conoscenze sui fondamenti di JavaScript."
+        }
+      }
+    }
+  }
+}

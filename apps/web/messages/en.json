@@ -1,0 +1,81 @@
+{
+  "home": {
+    "selectLesson": "Select a lesson to start"
+  },
+  "nav": {
+    "courseTitle": "Frontend Bootcamp"
+  },
+  "header": {
+    "searchPlaceholder": "Search in course"
+  },
+  "lesson": {
+    "courseProgress": "Course progress",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "chat": {
+    "title": "Comments",
+    "placeholder": "Leave a comment"
+  },
+  "status": {
+    "completed": "completed",
+    "in-progress": "in-progress",
+    "locked": "locked",
+    "new": "new"
+  },
+  "theme": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "lessonType": {
+    "video": "Video",
+    "article": "Article",
+    "quiz": "Quiz"
+  },
+  "modules": {
+    "mod-1": {
+      "title": "Getting Started",
+      "lessons": {
+        "les-1-1": {
+          "title": "Welcome & Setup",
+          "content": "## Welcome to the Frontend Bootcamp!\n\nIn this lesson we cover the **tools and environment** you'll need throughout the course.\n\n### What you'll need\n\n- A modern browser (Chrome, Firefox, or Edge)\n- A code editor — we recommend [VS Code](https://code.visualstudio.com)\n- Node.js **v20+** installed on your machine"
+        },
+        "les-1-2": {
+          "title": "Dev Environment"
+        },
+        "les-1-3": {
+          "title": "Your First Page",
+          "content": "## Quiz: Your First Page\n\nBuild a simple HTML page that includes:\n\n1. A **heading** with your name\n2. A **paragraph** introducing yourself\n3. An **unordered list** of your three favourite technologies"
+        }
+      }
+    },
+    "mod-2": {
+      "title": "HTML & CSS",
+      "lessons": {
+        "les-2-1": {
+          "title": "Intro to HTML",
+          "content": "## What is HTML?\n\n**HTML** (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser.\n\n### Key Concepts\n\n- **Elements** are the building blocks of HTML pages\n- **Tags** usually come in pairs: `<p>` and `</p>`\n- **Attributes** provide additional information about elements"
+        },
+        "les-2-2": {
+          "title": "CSS Fundamentals"
+        },
+        "les-2-3": {
+          "title": "Flexbox & Grid"
+        },
+        "les-2-4": {
+          "title": "Responsive Design",
+          "content": "## Responsive Web Design\n\nResponsive web design is about creating web pages that look good on **all devices** — desktops, tablets, and phones.\n\n### Best Practices\n\n1. Use **relative units** (`rem`, `%`, `vw`) instead of fixed pixels\n2. Design **mobile-first**, then add complexity for larger screens\n3. Test on real devices, not just browser DevTools"
+        }
+      }
+    },
+    "mod-3": {
+      "title": "JavaScript",
+      "lessons": {
+        "les-3-1": {
+          "title": "Variables & Types",
+          "content": "## Variables & Data Types\n\nJavaScript variables can be declared using `let`, `const`, or `var`. Each has different scoping rules.\n\nTest your knowledge of JavaScript fundamentals."
+        }
+      }
+    }
+  }
+}

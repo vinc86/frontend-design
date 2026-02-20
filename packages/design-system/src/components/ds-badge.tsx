@@ -1,0 +1,34 @@
+import { Badge } from "@workspace/ui/components/badge";
+import { cn } from "@workspace/ui/lib/utils";
+import type { ComponentProps } from "react";
+
+const statusVariants = {
+  completed: "bg-green-500/15 text-green-500 border-green-500/20",
+  "in-progress": "bg-yellow-500/15 text-orange-500 border-primary/20",
+  locked: "bg-muted text-muted-foreground border-muted",
+  new: "bg-primary/15 text-primary border-primary/20",
+} as const;
+
+type Status = keyof typeof statusVariants;
+
+interface DsBadgeProps extends ComponentProps<typeof Badge> {
+  /** LMS status variant. */
+  status?: Status;
+}
+
+/** EPICODE branded badge with LMS status variants. */
+export default function DsBadge({
+  status,
+  className,
+  children,
+  ...props
+}: DsBadgeProps) {
+  return (
+    <Badge
+      className={cn(status ? statusVariants[status] : className)}
+      {...props}
+    >
+      {children}
+    </Badge>
+  );
+}
