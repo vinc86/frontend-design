@@ -28,15 +28,23 @@ export default function DsCard({
   ...props
 }: DsCardProps) {
   return (
-    <Card {...props}>
+    <Card className="" {...props}>
       {(title || description) && (
         <CardHeader>
           {title && <CardTitle>{title}</CardTitle>}
-          {description && <CardDescription>{description}</CardDescription>}
+          {description && (
+            <CardDescription className="text-card-foreground">
+              {description}
+            </CardDescription>
+          )}
         </CardHeader>
       )}
-      {children && <CardContent>{children}</CardContent>}
-      {footer && <CardFooter>{footer}</CardFooter>}
+      {children && (
+        <CardContent className="text-card-foreground">{children}</CardContent>
+      )}
+      {footer && (
+        <CardFooter className="text-card-foreground">{footer}</CardFooter>
+      )}
     </Card>
   );
 }

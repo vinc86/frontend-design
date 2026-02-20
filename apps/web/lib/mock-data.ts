@@ -14,7 +14,7 @@ export type Lesson = {
   id: string;
   title: string;
   type: "video" | "article" | "quiz";
-  status: "completed" | "in-progress" | "locked";
+  status: "completed" | "in-progress" | "locked" | "new";
   content?: string;
 };
 
@@ -94,14 +94,14 @@ Build a simple HTML page that includes:
           id: "les-2-2",
           title: "CSS Fundamentals",
           type: "video",
-          status: "completed",
+          status: "in-progress",
           content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         },
         {
           id: "les-2-3",
           title: "Flexbox & Grid",
           type: "video",
-          status: "in-progress",
+          status: "new",
           content: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         },
         {

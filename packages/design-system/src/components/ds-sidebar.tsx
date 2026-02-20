@@ -50,15 +50,15 @@ export default function DsSidebar({
     <>
       <Sidebar collapsible={collapsible} {...props}>
         {(logo || header) && (
-          <SidebarHeader className="flex-row items-center gap-2 overflow-hidden whitespace-nowrap">
+          <SidebarHeader className="flex-row items-center gap-3 overflow-hidden">
             {logo && (
               // biome-ignore lint/performance/noImgElement: not using Next.js Image in design-system
               <img
                 alt="EPICODE"
                 className="shrink-0"
-                height="40"
+                height="30"
                 src={logo}
-                width="40"
+                width="30"
               />
             )}
             {header && (

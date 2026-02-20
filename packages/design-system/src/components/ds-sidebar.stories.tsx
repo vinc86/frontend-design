@@ -8,7 +8,7 @@ import {
   ListIcon,
 } from "lucide-react";
 import type { CSSProperties } from "react";
-import logo from "../assets/epicode-logo.jpeg";
+import logo from "../assets/epicode-logo.png";
 import DsSidebar from "./ds-sidebar.js";
 import DsTreeItem from "./ds-tree-item.js";
 

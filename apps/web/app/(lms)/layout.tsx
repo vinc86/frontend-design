@@ -5,7 +5,7 @@ import type { CSSProperties, ReactNode } from "react";
 
 export default function LmsLayout({ children }: { children: ReactNode }) {
   return (
-    <SidebarProvider style={{ "--sidebar-width": "17rem" } as CSSProperties}>
+    <SidebarProvider style={{ "--sidebar-width": "20rem" } as CSSProperties}>
       {children}
     </SidebarProvider>
   );

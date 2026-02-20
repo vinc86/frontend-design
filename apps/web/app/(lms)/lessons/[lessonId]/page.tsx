@@ -1,5 +1,6 @@
 import DsBadge from "@workspace/design-system/components/ds-badge";
 import DsButton from "@workspace/design-system/components/ds-button";
+import DsCard from "@workspace/design-system/components/ds-card";
 import DsProgress from "@workspace/design-system/components/ds-progress";
 import { SidebarInset } from "@workspace/ui/components/sidebar";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
@@ -51,7 +52,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
             <div className="flex flex-1 flex-col overflow-y-auto">
               <CourseHeader />
 
-              <div className="flex justify-between border-b px-10 py-2">
+              <div className="flex justify-between px-10 py-2">
                 <div className="flex items-center justify-between">
                   <nav className="flex items-center gap-1 text-muted-foreground text-sm">
                     <span>{course.title}</span>
@@ -63,34 +64,35 @@ export default async function LessonPage({ params }: LessonPageProps) {
                     </span>
                   </nav>
                 </div>
-                <DsBadge status={"completed"} />
                 <DsProgress
                   label="Course progress"
                   showPercentage
                   value={getCourseProgress()}
                 />
               </div>
-
               <div className="flex-1 space-y-6 px-10 py-6">
-                <h1 className="font-semibold text-2xl">{activeLesson.title}</h1>
+                <DsBadge status={activeLesson.status}>
+                  {activeLesson.status}
+                </DsBadge>
+                <DsCard title={activeLesson.title}>
+                  {activeLesson.type === "video" && activeLesson.content && (
+                    <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-black">
+                      <iframe
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="h-full w-full"
+                        src={activeLesson.content}
+                        title={activeLesson.title}
+                      />
+                    </div>
+                  )}
 
-                {activeLesson.type === "video" && activeLesson.content && (
-                  <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-black">
-                    <iframe
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="h-full w-full"
-                      src={activeLesson.content}
-                      title={activeLesson.title}
-                    />
-                  </div>
-                )}
-
-                {activeLesson.content && activeLesson.type !== "video" && (
-                  <article className="prose prose-sm dark:prose-invert max-w-none">
-                    <Markdown>{activeLesson.content}</Markdown>
-                  </article>
-                )}
+                  {activeLesson.content && activeLesson.type !== "video" && (
+                    <article className="prose prose-sm dark:prose-invert max-w-none">
+                      <Markdown>{activeLesson.content}</Markdown>
+                    </article>
+                  )}
+                </DsCard>
               </div>
 
               <footer className="flex items-center justify-between border-t px-10 py-4">

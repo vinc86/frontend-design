@@ -6,7 +6,7 @@ const statusVariants = {
   completed: "bg-green-500/15 text-green-500 border-green-500/20",
   "in-progress": "bg-yellow-500/15 text-orange-500 border-primary/20",
   locked: "bg-muted text-muted-foreground border-muted",
-  new: "bg-pink-500/15 text-pink-500 border-pink-500/20",
+  new: "bg-primary/15 text-primary border-primary/20",
 } as const;
 
 type Status = keyof typeof statusVariants;

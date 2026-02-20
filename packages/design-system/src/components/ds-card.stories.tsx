@@ -33,8 +33,8 @@ export const Default: Story = {
       "Learn the fundamentals of React including components, state and props.",
     children: (
       <div className="flex flex-col gap-2 text-muted-foreground text-sm">
-        <p>Duration: 45 min</p>
-        <p>Difficulty: Beginner</p>
+        <p className="text-card-foreground">Duration: 45 min</p>
+        <p className="text-card-foreground">Difficulty: Beginner</p>
       </div>
     ),
     footer: <DsButton size="sm">Start Lesson</DsButton>,

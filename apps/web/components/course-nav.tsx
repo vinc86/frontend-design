@@ -1,14 +1,8 @@
+import DsBadge from "@workspace/design-system/components/ds-badge";
 import DsSidebar from "@workspace/design-system/components/ds-sidebar";
 import DsTreeItem from "@workspace/design-system/components/ds-tree-item";
-import {
-  CheckCircleIcon,
-  CircleDotIcon,
-  FileTextIcon,
-  LockIcon,
-  PackageIcon,
-  PlayCircleIcon,
-} from "lucide-react";
-import logo from "@/assets/epicode-logo.jpeg";
+import { FileTextIcon, PackageIcon, PlayCircleIcon } from "lucide-react";
+import logo from "@/assets/epicode-logo.png";
 import { course } from "@/lib/mock-data";
 
 interface CourseNavProps {
@@ -19,12 +13,6 @@ const lessonIcon = {
   video: <PlayCircleIcon className="size-3.5" />,
   article: <FileTextIcon className="size-3.5" />,
   quiz: <FileTextIcon className="size-3.5" />,
-};
-
-const statusIcon = {
-  completed: <CheckCircleIcon className="size-3.5 text-green-500!" />,
-  "in-progress": <CircleDotIcon className="size-3.5" />,
-  locked: <LockIcon className="size-3.5" />,
 };
 
 export default function CourseNav({ activeLessonId }: CourseNavProps) {
@@ -40,18 +28,19 @@ export default function CourseNav({ activeLessonId }: CourseNavProps) {
             label={`${i + 1}. ${mod.title}`}
           >
             {mod.lessons.map((lesson) => (
-              <DsTreeItem
-                disabled={lesson.status === "locked"}
-                href={`/lessons/${lesson.id}`}
-                icon={
-                  lesson.status === "completed"
-                    ? statusIcon[lesson.status]
-                    : lessonIcon[lesson.type]
-                }
-                isActive={lesson.id === activeLessonId}
+              <div
+                className="flex w-full items-center justify-between"
                 key={lesson.id}
-                label={lesson.title}
-              />
+              >
+                <DsTreeItem
+                  disabled={lesson.status === "locked"}
+                  href={`/lessons/${lesson.id}`}
+                  icon={lessonIcon[lesson.type]}
+                  isActive={lesson.id === activeLessonId}
+                  label={lesson.title}
+                />
+                <DsBadge status={lesson.status}>{lesson.status}</DsBadge>
+              </div>
             ))}
           </DsTreeItem>
         );
