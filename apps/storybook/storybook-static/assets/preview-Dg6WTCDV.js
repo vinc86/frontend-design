@@ -1,1 +1,0 @@
-const a={globalTypes:{theme:{description:"Theme",toolbar:{title:"Theme",icon:"moon",items:["light","dark"],dynamicTitle:!0}}},initialGlobals:{theme:"dark"},decorators:[(e,t)=>{const o=t.globals.theme;return document.documentElement.classList.toggle("dark",o==="dark"),e()}],parameters:{controls:{matchers:{color:/(background|color)$/i,date:/Date$/i}}}};export{a as default};
