@@ -14,7 +14,7 @@ export default function ChatAside() {
     <aside className="flex h-screen w-70 flex-col overflow-hidden border-l">
       {/* Chat header — toggle button (always on top) */}
       <button
-        className="relative z-20 flex w-full items-center gap-2 overflow-hidden border-b bg-muted px-4 py-5 text-left transition-color hover:bg-muted-foreground"
+        className="relative z-20 flex w-full cursor-pointer items-center gap-2 overflow-hidden border-b bg-muted px-4 py-5 text-left transition-color"
         onClick={() => setIsOpen((prev) => !prev)}
         type="button"
       >

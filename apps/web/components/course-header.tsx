@@ -19,14 +19,14 @@ export default function CourseHeader() {
 
       <div className="flex items-center gap-4">
         {/* Notification bell */}
-        <button className="relative" type="button">
+        <button className="relative cursor-pointer" type="button">
           <BellIcon className="size-5 text-muted-foreground" />
           <span className="absolute -top-1.5 -right-1.5 flex size-4 items-center justify-center rounded-full bg-destructive text-[10px] text-white">
             1
           </span>
         </button>
         {/* User avatar */}
-        <DsAvatar fallback="VM" />
+        <DsAvatar className="cursor-pointer" fallback="VM" />
       </div>
     </header>
   );
